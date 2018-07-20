@@ -1,11 +1,10 @@
 import fs from 'fs';
-import { fromXML } from 'from-xml';
+import parse from './parser';
+import getRenderer from './renderers';
 
-const parse = (xml) => {
-  return fromXML(xml);
-};
-
-export default (source, format) => {
+export default (source, format = 'rss') => {
   const data = fs.readFileSync(source, 'utf-8');
-  return parse(data);
+  const render = getRenderer(format);
+  const { type, ...parsedData } = parse(data);
+  return render(parsedData);
 };
