@@ -12,13 +12,12 @@
     "test": "jest",
     "babel-node": "babel-node",
     "eslint": "eslint",
-    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
-    "prepublish": "npm run build"
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline"
   },
   "devDependencies": {
     "@babel/cli": "*",
     "@babel/core": "*",
-    "babel-eslint": "*",
+    "babel-eslint": "^8.2.6",
     "babel-preset-env": "*",
     "babel-preset-stage-0": "*",
     "eslint": "*",
@@ -27,6 +26,8 @@
     "jest": "*"
   },
   "dependencies": {
-    "commander": "*"
+    "cheerio": "^1.0.0-rc.2",
+    "commander": "*",
+    "from-xml": "^0.1.6"
   }
 }

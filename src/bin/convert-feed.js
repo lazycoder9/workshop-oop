@@ -7,7 +7,7 @@ program
   .description('Do something with RSS and Atom feeds')
   .arguments('<source>')
   .option('-f, --format [type]', 'Output format')
-  .action(function (source) {
+  .action((source) => {
     console.log(convertFeed(source, program.format));
   })
   .parse(process.argv);
