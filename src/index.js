@@ -1,0 +1,1 @@
+export default (source, format) => `Required format: ${format}`;
