@@ -28,6 +28,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "commander": "*",
-    "feedme": "^1.2.0"
+    "feedme": "^1.2.0",
+    "nock": "^9.4.2"
   }
 }
