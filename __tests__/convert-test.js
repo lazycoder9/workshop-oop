@@ -1,9 +1,9 @@
 import convertFeed from '../src';
 
-test('RSS to Atom', () => {
+test('RSS to Atom', async () => {
   const rss = '__tests__/fixtures/rss.xml';
 
-  const actual = convertFeed(rss, 'atom');
+  const actual = await convertFeed(rss, 'atom');
   const expected = [
     '<?xml version="1.0" encoding="utf-8"?>', 
     '<feed xmlns="http://www.w3.org/2005/Atom">',

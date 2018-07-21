@@ -1,9 +1,10 @@
-import fs from 'fs';
 import parse from './parser';
 import getRenderer from './renderers';
+import getReader from './readers';
 
-export default (source, format = 'rss') => {
-  const data = fs.readFileSync(source, 'utf-8');
+export default async (source, format = 'rss') => {
+  const reader = getReader(source);
+  const data = await reader.read();
   const render = getRenderer(format);
   const { type, ...parsedData } = parse(data);
   return render(parsedData);

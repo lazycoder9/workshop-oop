@@ -7,7 +7,8 @@ program
   .description('Do something with RSS and Atom feeds')
   .arguments('<source>')
   .option('-f, --format [type]', 'Output format')
-  .action((source) => {
-    console.log(convertFeed(source, program.format));
+  .action(async (source) => {
+    const result = await convertFeed(source, program.format);
+    console.log(result);
   })
   .parse(process.argv);
