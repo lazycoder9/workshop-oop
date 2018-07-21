@@ -1,5 +1,4 @@
-import fs from 'fs';
-const fsPromises = fs.promises;
+import { promises as fsPromises } from 'fs';
 
 export default class {
   constructor(path, data = null) {
