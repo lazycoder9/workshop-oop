@@ -7,6 +7,6 @@ export default class {
 
   async read() {
     const data = await axios.get(this.url);
-    return data;
+    return data.data;
   }
 }
