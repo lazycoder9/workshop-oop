@@ -2,10 +2,10 @@ import parse from './parser';
 import getRenderer from './renderers';
 import getReader from './readers';
 
-export default async (source, format = 'rss') => {
-  const reader = getReader(source);
-  const data = await reader.read();
-  const render = getRenderer(format);
-  const { type, ...parsedData } = parse(data);
-  return render(parsedData);
-};
+export default class {
+  async convert(source, format = 'rss') {
+    const data = await getReader(source).read();
+    const { type, ...parsedData } = parse(data);
+    return getRenderer(format).render(parsedData);
+  }
+}

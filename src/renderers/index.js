@@ -1,9 +1,9 @@
 import AtomRenderer from './AtomRenderer';
-import toRss from './toRss';
+import RssRenderer from './RssRenderer';
 
 const renderers = {
-  rss: toRss,
+  rss: RssRenderer,
   atom: AtomRenderer
 };
 
-export default format => renderers[format];
+export default format => new renderers[format];
